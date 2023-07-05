@@ -1,1 +1,1 @@
-# color-trap-game
+# Color Trap Game
