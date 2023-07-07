@@ -14,18 +14,21 @@
   <body>
     <div class="scores"><a href="highscores.html">See Highscores</a></div>
 
-    <div class="timer">Time Left: <span id="time">0</span></div>
+    <div class="timer hide">Time Left: <span id="time">0</span></div>
 
     <div class="wrapper">
       <div id="start-screen" class="start">
         <h1>Color Trap Game</h1>
         <p>
-          Try to match the word to the right color! You have 15 seconds to get
-          as many right as possible!
+          Click the colour, not the word! You have 30 seconds to complete the
+          game. Each wrong answer deducts 5 seconds from your final score!!
         </p>
-        <button id="start">Start Game</button>
+        <div class="relative">
+           <img class="arrow" src="./assets/images/arrow.png" /> 
+          <button id="start">Start Game</button>
+        </div>
       </div>
-
+g
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices"></div>

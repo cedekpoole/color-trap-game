@@ -1,6 +1,6 @@
 body {
     font-family: 'Space Mono', sans-serif;
-    font-size: 120%;
+    font-size: 130%;
     color: white;
     background-color: #495867;
   }
@@ -87,4 +87,20 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 40px;
+    left: -10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
   }
