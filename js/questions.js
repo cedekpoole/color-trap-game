@@ -1,17 +1,17 @@
 const questions = [
   {
     question: "Blue",
-    color: "Yellow",
+    color: "green",
     options: [
-        "Green",
+        "Yellow",
         "Red",
         "Black",
         "Blue",
-        "Yellow",
+        "Green",
         "Orange"
 
     ],
-    answer: "Yellow"
+    answer: "Green"
   },
   {
     question: "Red",

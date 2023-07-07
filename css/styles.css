@@ -41,20 +41,6 @@ body {
     font-size: 100%;
   }
   
-  ol {
-    padding-left: 0px;
-    max-height: 400px;
-    overflow: auto;
-  }
-  
-  li {
-    padding: 5px;
-    list-style: decimal inside none;
-  }
-  
-  li:nth-child(odd) {
-    background-color: #f3edfc;
-  }
   
   .wrapper {
     margin: 100px auto 0 auto;
@@ -67,6 +53,7 @@ body {
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
+    font-weight: bold;
   }
   
   .hide {

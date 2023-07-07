@@ -13,7 +13,7 @@ const timeEl = document.querySelector("#time");
 
 let questionNumber = 0;
 let q = questions[questionNumber];
-let timeInSeconds = 30;
+let timeInSeconds = 40;
 
 // create countdown for when game starts
 const countdown = () => {
@@ -45,7 +45,7 @@ startButton.addEventListener("click", () => {
 });
 
 const renderQuestion = () => {
-  questionTitle.textContent = q.question;
+  questionTitle.textContent = q.question.toUpperCase();
   questionTitle.style.color = q.color;
 
   let answerOptions = "";
