@@ -8,29 +8,28 @@ const questionWrapper = document.querySelector("#questions");
 const timer = document.querySelector(".timer");
 const questionTitle = document.querySelector("#question-title");
 const choicesEl = document.querySelector("#choices");
-const feedbackEl = document.querySelector('#feedback')
-const timeEl = document.querySelector("#time")
-
+const feedbackEl = document.querySelector("#feedback");
+const timeEl = document.querySelector("#time");
 
 let questionNumber = 0;
 let q = questions[questionNumber];
 let timeInSeconds = 30;
 
-// create countdown for when game starts 
+// create countdown for when game starts
 const countdown = () => {
-    let timeInterval = setInterval(function () {
-      timeInSeconds--;
-      timeEl.textContent = timeInSeconds;
-      if (timeInSeconds <= 0 || questionNumber === questions.length) {
-        clearInterval(timeInterval);
-        // If the user reaches 0 seconds, it is the end of the quiz (they score a 0)
-        if (timeLeft < 0) {
-          timeLeft = 0;
-        }
-        // EndQuiz();
+  let timeInterval = setInterval(function () {
+    timeInSeconds--;
+    timeEl.textContent = timeInSeconds;
+    if (timeInSeconds <= 0 || questionNumber === questions.length) {
+      clearInterval(timeInterval);
+      // If the user reaches 0 seconds, it is the end of the quiz (they score a 0)
+      if (timeInSeconds < 0) {
+        timeInSeconds = 0;
       }
-    }, 1000);
-  };
+      // EndQuiz();
+    }
+  }, 1000);
+};
 
 // Create event listener for when start button is clicked
 startButton.addEventListener("click", () => {
@@ -58,8 +57,9 @@ const renderQuestion = () => {
 
 choicesEl.addEventListener("click", (e) => {
   let userAnswer = e.target.textContent;
+
   if (timeInSeconds > 0 && questionNumber < questions.length) {
-    feedbackEl.style.display = "block"
+    feedbackEl.style.display = "block";
 
     if (userAnswer === questions[questionNumber].answer) {
       feedbackEl.textContent = "Correct Answer!";
@@ -75,6 +75,6 @@ choicesEl.addEventListener("click", (e) => {
   }, 500);
 
   questionNumber++;
-  q = questions[questionNumber]
+  q = questions[questionNumber];
   renderQuestion();
 });

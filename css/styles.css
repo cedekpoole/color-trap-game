@@ -17,7 +17,8 @@ body {
   
   button {
     display: inline-block;
-    margin: 5px;
+    font-family: 'Space Mono', sans-serif;
+    margin: 15px;
     cursor: pointer;
     font-size: 100%;
     background-color: #FE5F55;
@@ -59,6 +60,14 @@ body {
     margin: 100px auto 0 auto;
     max-width: 700px;
   }
+
+  #question-title {
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
   
   .hide {
     display: none;
@@ -89,8 +98,8 @@ body {
 
   .arrow {
     position: absolute;
-    top: 40px;
-    left: -10px;
+    top: 50px;
+    left: -20px;
   }
 
   .decoration {
