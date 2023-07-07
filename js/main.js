@@ -11,6 +11,11 @@ const choicesEl = document.querySelector("#choices");
 const feedbackEl = document.querySelector("#feedback");
 const timeEl = document.querySelector("#time");
 
+// End screen elements
+const endScreenEl = document.querySelector("#end-screen");
+const finalScore = document.querySelector("#final-score");
+const endTitle = document.querySelector("#end-title");
+
 let questionNumber = 0;
 let q = questions[questionNumber];
 let timeInSeconds = 40;
@@ -26,7 +31,7 @@ const countdown = () => {
       if (timeInSeconds < 0) {
         timeInSeconds = 0;
       }
-      // EndQuiz();
+      EndQuiz();
     }
   }, 1000);
 };
@@ -44,6 +49,7 @@ startButton.addEventListener("click", () => {
   countdown();
 });
 
+// Render questions when start button is clicked
 const renderQuestion = () => {
   questionTitle.textContent = q.question.toUpperCase();
   questionTitle.style.color = q.color;
@@ -55,6 +61,7 @@ const renderQuestion = () => {
   choicesEl.innerHTML = answerOptions;
 };
 
+// If the user picks the right or wrong answer, provide feedback
 choicesEl.addEventListener("click", (e) => {
   let userAnswer = e.target.textContent;
 
@@ -70,11 +77,30 @@ choicesEl.addEventListener("click", (e) => {
       timeInSeconds -= 5;
     }
   }
+  // only display feedback for half a second
   setTimeout(function () {
     feedbackEl.style.display = "none";
   }, 500);
 
+  // go to the next question
   questionNumber++;
   q = questions[questionNumber];
   renderQuestion();
 });
+
+// create function that executes when quiz has ended
+const EndQuiz = () => {
+  // show the end screen
+  endScreenEl.removeAttribute("class");
+  // remove timer content
+  timeEl.textContent = "";
+  // hide question container
+  questionWrapper.classList = "hide";
+  // When the user completes all questions, the remaining time becomes their score
+  finalScore.textContent = timeInSeconds;
+
+  // use a tertiary operator for the end screen title text
+  timeInSeconds > 10
+    ? (endTitle.textContent = "Well done - you smashed it!")
+    : (endTitle.textContent = "Oof - better luck next time!");
+};
