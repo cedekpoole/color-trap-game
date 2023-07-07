@@ -2,7 +2,6 @@ const initials = document.querySelector("#initials");
 const submitButton = document.querySelector("#submit");
 
 submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
   if (initials.value === "") {
     alert("Please enter your initials!");
   } else {

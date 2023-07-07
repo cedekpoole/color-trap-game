@@ -92,6 +92,7 @@ choicesEl.addEventListener("click", (e) => {
 const EndQuiz = () => {
   // show the end screen
   endScreenEl.removeAttribute("class");
+  feedbackEl.textContent = "";
   // remove timer content
   timeEl.textContent = "";
   // hide question container
