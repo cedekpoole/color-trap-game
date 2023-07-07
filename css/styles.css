@@ -83,12 +83,6 @@ body {
     border-top: 2px solid #ccc;
   }
   
-  .timer {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-
   .relative {
     position: relative;
   }
@@ -99,8 +93,18 @@ body {
     left: -10px;
   }
 
+  .decoration {
+    position: absolute;
+    right: 3rem;
+    bottom: 4rem;
+  }
+
   @media screen and (max-width: 768px) {
     .arrow {
+        display: none;
+    }
+
+    .decoration {
         display: none;
     }
   }
