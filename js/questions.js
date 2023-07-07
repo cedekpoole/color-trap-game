@@ -10,7 +10,8 @@ const questions = [
         "Yellow",
         "Orange"
 
-    ]
+    ],
+    answer: "Yellow"
   },
   {
     question: "Red",
@@ -23,7 +24,8 @@ const questions = [
         "Green",
         "Yellow"
 
-    ]
+    ],
+    answer: "Orange"
   },
   {
     question: "Orange",
@@ -36,7 +38,8 @@ const questions = [
         "Yellow",
         "Red"
 
-    ]
+    ],
+    answer: "Black"
   },
   {
     question: "Green",
@@ -49,7 +52,8 @@ const questions = [
         "Blue",
         "Orange"
 
-    ]
+    ],
+    answer: "Yellow"
   },
   {
     question: "Yellow",
@@ -62,7 +66,8 @@ const questions = [
         "Orange",
         "Yellow"
 
-    ]
+    ],
+    answer: "Red"
   },
   {
     question: "Blue",
@@ -75,7 +80,8 @@ const questions = [
         "Red",
         "Green"
 
-    ]
+    ],
+    answer: "Black"
   },
   {
     question: "Red",
@@ -88,7 +94,8 @@ const questions = [
         "Blue",
         "Black"
 
-    ]
+    ],
+    answer: "Green"
   },
   {
     question: "Blue",
@@ -101,7 +108,8 @@ const questions = [
         "Green",
         "Orange"
 
-    ]
+    ],
+    answer: "Yellow"
   },
   {
     question: "Orange",
@@ -114,7 +122,8 @@ const questions = [
         "Yellow",
         "Red"
 
-    ]
+    ],
+    answer: "Blue"
   },
   {
     question: "Black",
@@ -127,6 +136,7 @@ const questions = [
         "Yellow",
         "Orange"
 
-    ]
+    ],
+    answer: "Green"
   }
 ];
