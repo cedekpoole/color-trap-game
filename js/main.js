@@ -21,7 +21,7 @@ const submitButton = document.querySelector("#submit");
 
 let questionNumber = 0;
 let q = questions[questionNumber];
-let timeInSeconds = 40;
+let timeInSeconds = 45;
 
 // create countdown for when game starts
 const countdown = () => {

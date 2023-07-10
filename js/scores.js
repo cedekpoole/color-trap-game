@@ -1,4 +1,3 @@
-
 const scoreList = document.querySelector("#highscores");
 const clearButton = document.querySelector("#clear");
 
@@ -23,5 +22,4 @@ const showScores = () => {
   }
 };
 
-showScores()
-
+showScores();
