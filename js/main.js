@@ -16,8 +16,14 @@ const endScreenEl = document.querySelector("#end-screen");
 const finalScore = document.querySelector("#final-score");
 const endTitle = document.querySelector("#end-title");
 
+// local storage elements
 const userName = document.querySelector("#name");
 const submitButton = document.querySelector("#submit");
+
+// Place audio wav files into variables
+const correctAudio = new Audio("assets/sfx/correct.wav");
+const wrongAudio = new Audio("assets/sfx/incorrect.wav");
+const startAudio = new Audio("assets/sfx/start.wav");
 
 let questionNumber = 0;
 let q = questions[questionNumber];
@@ -48,6 +54,7 @@ startButton.addEventListener("click", () => {
   scores.setAttribute("class", "hide");
 
   questionNumber = 0;
+  startAudio.play();
   renderQuestion();
   countdown();
 });
@@ -74,16 +81,18 @@ choicesEl.addEventListener("click", (e) => {
     if (userAnswer === questions[questionNumber].answer) {
       feedbackEl.textContent = "Correct Answer!";
       feedbackEl.style.color = "#C1D37F";
+      correctAudio.play();
     } else {
       feedbackEl.textContent = "Wrong Answer!";
       feedbackEl.style.color = "#89023E";
       timeInSeconds -= 5;
+      wrongAudio.play();
     }
   }
   // only display feedback for half a second
   setTimeout(function () {
     feedbackEl.style.display = "none";
-  }, 500);
+  }, 750);
 
   // go to the next question
   questionNumber++;
