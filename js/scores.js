@@ -14,7 +14,8 @@ const showScores = () => {
 
   // sort from highest to lowest
   previousScores.sort((num1, num2) => num2.score - num1.score);
-
+  
+  // show all scores on the highscore page
   for (let scores of previousScores) {
     const list = document.createElement("li");
     list.textContent = `${scores.name} - ${scores.score} seconds`;
