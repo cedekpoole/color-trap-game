@@ -16,6 +16,9 @@ const endScreenEl = document.querySelector("#end-screen");
 const finalScore = document.querySelector("#final-score");
 const endTitle = document.querySelector("#end-title");
 
+const userName = document.querySelector("#name");
+const submitButton = document.querySelector("#submit");
+
 let questionNumber = 0;
 let q = questions[questionNumber];
 let timeInSeconds = 40;
@@ -105,3 +108,24 @@ const EndQuiz = () => {
     ? (endTitle.textContent = "Well done - you smashed it!")
     : (endTitle.textContent = "Oof - better luck next time!");
 };
+
+submitButton.addEventListener("click", () => {
+  if (userName.value === "") {
+    alert("Please enter your name!");
+  } else {
+    // check if there has been previous high scores in local storage
+    const previousScores = JSON.parse(localStorage.getItem("highscore")) || [];
+    // create object for user details
+    const userDetails = {
+      score: timeInSeconds,
+      name: userName.value,
+    };
+
+    // add new user to local storage
+    previousScores.push(userDetails);
+    localStorage.setItem("highscore", JSON.stringify(previousScores));
+
+    // when button is pressed, move user to highscores html page
+    location.href = "highscores.html";
+  }
+});
